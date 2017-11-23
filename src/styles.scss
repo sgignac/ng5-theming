@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./app/themes/belair.theme";
+@import "./app/themes/intact.theme";
+
+@import "./app/header/header.component";
+
+@mixin themed-components($theme){
+    @include app-header-theme($theme);
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.belair{
+    @include themed-components($belair-theme);
+}
+.intact{
+    @include themed-components($intact-theme);
+}

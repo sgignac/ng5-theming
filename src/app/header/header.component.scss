@@ -1,0 +1,33 @@
+// component's variables
+$component-theme: (
+    app-header: (
+        h1Color: red,
+        h1BackColor: pink 
+    )
+);
+
+// component theme mixin
+@mixin app-header-theme($app-theme){
+    $style: map-merge(
+                    map-get($component-theme, 'app-header'), 
+                    map-get($app-theme, 'app-header'));
+    
+    // code style here
+    app-header{
+        div{
+            width: 100%;
+            text-align: center;
+            h1 {
+                color: map-get($style, 'h1Color');
+                background-color: map-get($style, 'h1BackColor');
+                padding: 10px;
+            }
+        }
+    }
+    
+
+}
+
+
+
+
