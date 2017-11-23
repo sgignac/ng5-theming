@@ -28,6 +28,8 @@ $component-theme: (
 
 }
 
+@include app-header-theme($component-theme);
+
 
 
 
