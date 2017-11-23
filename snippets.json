@@ -1,0 +1,35 @@
+{
+
+
+    // COMPONENTS THEME SCSS
+    "Component theme snippet": {
+		"prefix" : "theme",
+		"body" : [
+
+			"// component's variables",
+			"\\$component-theme: (",
+			"    $1: (",
+			"        ", 
+			"    )",
+			");",
+			"",
+			"// component theme mixin",
+			"@mixin $1-theme(\\$app-theme){",
+			"    $style: map-merge(map-get(\\$component-theme, '$1'), map-get(\\$app-theme, '$1'));",
+			"",
+			"    // code style here",
+			"    $1{",
+			"",
+			"    }",
+			"}",
+			"",
+			"//Apply Default Theme",
+			"@include $1-theme(\\$component-theme);"
+		],
+		"description" : "Component theme snippet"
+	}
+
+
+
+
+}
