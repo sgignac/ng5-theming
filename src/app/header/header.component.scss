@@ -28,7 +28,8 @@ $component-theme: (
 
 }
 
-@include app-header-theme($component-theme);
+// If you are not tied to a theme, uncomment this to see the default style
+// @include app-header-theme($component-theme);
 
 
 

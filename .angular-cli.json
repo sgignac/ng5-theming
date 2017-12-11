@@ -19,7 +19,22 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        {
+          "input": "app/themes/belair/belair.scss",
+          "output": "themes/belair",
+          "lazy": true
+        },
+        {
+          "input": "app/themes/intact/intact.scss",
+          "output": "themes/intact",
+          "lazy": true
+        },
+        {
+          "input": "app/themes/bna/bna.scss",
+          "output": "themes/bna",
+          "lazy": true
+        }
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Added themes
+@import "./belair.variables";
+
+// List all your components here
+@import "../../header/header.component";
+
+@mixin themed-components($theme){
+    // Include all components mixin here
+    @include app-header-theme($theme);
+}
+
+@include themed-components($belair-theme);

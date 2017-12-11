@@ -4,14 +4,16 @@ import { IThemeConfig } from './modules/intact-theming/i-theme-config';
 import { IntactThemingModule } from './modules/intact-theming/intact-theming.module';
 import { ThemeService } from './services/theme.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { ThemeSetupService } from './services/theme-setup.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 let themeConfig:IThemeConfig = {
-  acceptedThemes: ['belair', 'intact'],
+  acceptedThemes: ['belair', 'intact', 'bna'],
   tests: [
     { test: "^(?=.*belair)(?=.*\/cc).*$", theme: 'belair'},
     { test: "^(?=.*localhost:4200).*$", theme: "belair" },
@@ -23,6 +25,11 @@ let themeConfig:IThemeConfig = {
   ]
 };
 
+export function themeSetupServiceFactory(themeSetupService: ThemeSetupService): Function {
+  return () => themeSetupService.load();
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,17 +38,24 @@ let themeConfig:IThemeConfig = {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IntactThemingModule
   ],
   providers: [
-    ThemeService
+    ThemeSetupService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: themeSetupServiceFactory,
+      deps: [ThemeSetupService],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
   
-  constructor(private themeService: ThemeService){
-    this.themeService.setConfig(themeConfig);
+  constructor(){
+
   }
 
 }
