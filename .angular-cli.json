@@ -29,11 +29,6 @@
           "input": "app/themes/intact/intact.scss",
           "output": "themes/intact",
           "lazy": true
-        },
-        {
-          "input": "app/themes/bna/bna.scss",
-          "output": "themes/bna",
-          "lazy": true
         }
       ],
       "scripts": [],

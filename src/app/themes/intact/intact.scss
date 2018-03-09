@@ -1,14 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-// Added themes
-@import "./intact.variables";
+// Variables
+@import "variables";
 
-// List all your components here
-@import "../../header/header.component";
+// Import components
+@import "../common/components";
 
-@mixin themed-components($theme){
-    // Include all components mixin here
-    @include app-header-theme($theme);
-}
-
-@include themed-components($intact-theme);
+// Import theme style
+@import "styles";

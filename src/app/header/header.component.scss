@@ -1,36 +1,19 @@
-// component's variables
-$component-theme: (
-    app-header: (
-        h1Color: red,
-        h1BackColor: pink 
-    )
-);
+// default variables of the component
+$app-header-h1-background-color: steelblue !default;
+$app-header-h1-color: white !default;
 
-// component theme mixin
-@mixin app-header-theme($app-theme){
-    $style: map-merge(
-                    map-get($component-theme, 'app-header'), 
-                    map-get($app-theme, 'app-header'));
-    
-    // code style here
-    app-header{
-        div{
-            width: 100%;
-            text-align: center;
-            h1 {
-                color: map-get($style, 'h1Color');
-                background-color: map-get($style, 'h1BackColor');
-                padding: 10px;
-            }
+// code style here
+app-header{
+    div{
+        width: 100%;
+        text-align: center;
+        h1 {
+            color: $app-header-h1-color;
+            background-color: $app-header-h1-background-color;
+            padding: 10px;
         }
     }
-    
-
 }
-
-// If you are not tied to a theme, uncomment this to see the default style
-// @include app-header-theme($component-theme);
-
 
 
 

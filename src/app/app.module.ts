@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ThemeSetupService } from './services/theme-setup.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 
 let themeConfig:IThemeConfig = {
@@ -34,7 +35,8 @@ export function themeSetupServiceFactory(themeSetupService: ThemeSetupService): 
   declarations: [
     AppComponent,
     HeaderComponent,
-    ThemeComponent
+    ThemeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

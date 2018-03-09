@@ -1,0 +1,18 @@
+// Common variables
+@import "../common/variables";
+
+//Theme default variables
+$default-background-color: gold;
+$default-text-color: black;
+
+// Header variables
+$app-header-h1-background-color: $default-background-color;
+$app-header-h1-color: $default-text-color;
+
+
+// Footer Variables
+$app-footer-background-color: $default-background-color;
+$app-footer-color: $default-text-color;
+
+
+

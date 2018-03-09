@@ -1,0 +1,9 @@
+$app-footer-background-color: steelblue !default;
+$app-footer-color: white !default;
+
+app-footer{
+    div{
+        background-color: $app-footer-background-color;
+        color: $app-footer-color;
+    }
+}

@@ -8,14 +8,12 @@ declare var document: any;
 export class ThemeSetupService {
 
   themeConfig:IThemeConfig = {
-    acceptedThemes: ['belair', 'intact', 'bna'],
+    acceptedThemes: ['belair', 'intact'],
     tests: [
       { test: "^(?=.*belair)(?=.*\/cc).*$", theme: 'theme_belair' },
       { test: "^(?=.*localhost:4200).*$", theme: "theme_belair" },
       { test: "^(?=.*intact)(?=.*\/cc).*$", theme: "theme_intact" },
-      { test: "^(?=.*localhost:4201).*$", theme: "theme_intact" },
-      { test: "^(?=.*nbc-|.*-bna)(?=.*\/cc).*$", theme: "theme_bna" },
-      { test: "^(?=.*localhost:4202).*$", theme: "theme_bna" },
+      { test: "^(?=.*localhost:4300).*$", theme: "theme_intact" },
       { test: "$", theme: "theme_belair" } //fallback
     ]
   }; 
